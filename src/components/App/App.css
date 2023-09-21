@@ -1,0 +1,50 @@
+.app {
+  background-color: #202020;
+  min-height: 100vh;
+  font-family: 'Inter', Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+}
+.link {
+  transition: all 1s ease;
+}
+.link:hover {
+  opacity: 0.7;
+}
+.content__title {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: -0.04em;
+  text-align: left;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-bottom: 23px;
+  border-bottom: 1px solid #dadada;
+}
+
+.button {
+  transition: all 1s ease;
+}
+.button:hover {
+  opacity: 0.8;
+}
+@media (max-width: 768px) {
+  .content__title {
+    max-width: 668px;
+  }
+}
+
+@media (max-width: 320px) {
+  .content__title {
+    max-width: 292px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.72px;
+    padding-bottom: 27px;
+  }
+}
