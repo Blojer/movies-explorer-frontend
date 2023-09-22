@@ -38,12 +38,19 @@
   width: 50px;
 }
 
+@media (max-width: 800px) {
+  .not-found__title {
+    padding-top: 408px;
+  }
+}
+
 @media (max-width: 320px) {
   .not-found__title {
     font-size: 80px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    padding-top: 330px;
   }
 
   .not-found__subtitle {

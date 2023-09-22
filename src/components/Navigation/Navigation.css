@@ -79,12 +79,12 @@
   width: 28px;
   height: 23px;
   cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
   margin-right: 8px;
 }
 
-.burger__active {
-  margin-right: -5px;
-}
 .burger__button {
   background-color: #fff;
   height: 3px;
@@ -130,6 +130,9 @@
   .burger {
     display: flex;
   }
+  .burger__active {
+    margin-right: -4px;
+  }
   .navigate__movies:first-of-type {
     display: block;
   }
@@ -141,15 +144,16 @@
     position: absolute;
     right: 520px;
     top: 0;
+    z-index: 1;
   }
-  .navigate__burger {
+  .navigate_burger {
     display: none;
     flex-direction: column;
     background-color: #202020;
     height: 100%;
     width: 520px;
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     right: 0;
     padding-top: 160px;
@@ -165,6 +169,7 @@
     line-height: normal;
     margin-bottom: 28px;
     padding: 0;
+    z-index: 3;
   }
   .navigate__movies:last-child {
     padding-bottom: 0;
@@ -172,16 +177,26 @@
   }
   .navigate__profile {
     margin: 585px 0 0;
+    z-index: 3;
   }
 
   .navigate__movies_type_active {
     font-weight: 500;
     border-bottom: 2px solid #fff;
     padding-bottom: 4px;
+    z-index: 3;
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 550px) {
+  .burger__active {
+    margin: -15px 8px 0 0;
+  }
+
+  .blur {
+    right: 320px;
+  }
+
   .navigate__sign-up {
     font-size: 10px;
     font-style: normal;
@@ -197,11 +212,10 @@
     font-weight: 500;
     line-height: 16px;
   }
-}
-
-@media (max-width: 550px) {
-  .navigate__burger {
+  .navigate_burger {
     width: 320px;
+    gap: 24px;
+    padding-top: 144px;
   }
 
   .burger__button {
@@ -211,5 +225,31 @@
   .burger::after {
     content: '';
     width: 22px;
+  }
+
+  .navigate__movies_type_active {
+    opacity: 1;
+    border-bottom: none;
+    padding-bottom: 0;
+    position: relative;
+  }
+  .navigate__movies_type_active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    width: 100%;
+    bottom: -9px;
+    left: 0;
+    right: 0;
+
+    background-color: #fff;
+  }
+  .navigate__movies {
+    padding-left: 0px;
+    margin: 0;
+  }
+  .navigate__profile {
+    margin: 420px 0 0;
   }
 }

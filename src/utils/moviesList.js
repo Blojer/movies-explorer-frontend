@@ -52,7 +52,7 @@ export const movies = [
     movieId: 777
   },
   {
-    nameRU: 'Gimme Danger: История Игги и The Stooges',
+    nameRU: 'Gimme Danger: История Игги и',
     image: movie8,
     movieId: 888
   },

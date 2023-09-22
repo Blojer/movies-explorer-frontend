@@ -1,4 +1,4 @@
-.login-form__body {
+.login-form {
   width: 396px;
   margin: 0 auto;
   display: flex;
@@ -21,7 +21,7 @@
   margin: 0;
 }
 
-.login-form {
+.login-form__body {
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -55,10 +55,6 @@
   font-weight: 400;
   line-height: normal;
   padding: 0 15px;
-}
-
-.login-form__input:focus {
-  outline-color: #3ddc84;
 }
 
 .login-form__button {
@@ -97,24 +93,36 @@
 }
 
 @media (max-width: 768px) {
-  .login-form__body {
-    width: 260px;
-    align-items: center;
+  .login-form__title {
+    padding: 38px 0;
   }
   .login-form__button {
-    width: 260px;
+    margin-top: 179px;
   }
+  .login-form__button_type_register {
+    margin-top: 91px;
+  }
+}
 
+@media (max-width: 450px) {
   .login-form__text {
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
   }
-}
-
-@media (max-width: 320px) {
+  .login-form__title {
+    padding: 44px 0;
+  }
   .login-form {
+    width: 260px;
+    align-items: center;
+    padding: 55px 0;
+  }
+  .login-form__button {
+    width: 260px;
+  }
+  .login-form__body {
     padding-top: 37px;
   }
   .login-form__button {

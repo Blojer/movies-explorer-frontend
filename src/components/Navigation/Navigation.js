@@ -5,7 +5,7 @@ import React from 'react';
 function Navigation() {
   const location = useLocation();
   const setActive = ({ isActive }) =>
-    isActive ? 'navigate__movies navigate__movies_type_active link' : 'navigate__movies link';
+    isActive ? 'navigate__movies navigate__movies_type_active' : 'navigate__movies app__link';
 
   const isLoggedIn = location.pathname !== '/';
   const [menuActive, setMenuActive] = React.useState(false);
@@ -13,7 +13,7 @@ function Navigation() {
     <nav>
       {isLoggedIn ? (
         <>
-          <div className={`navigate navigate__burger ${menuActive ? 'navigate__open' : ''} `}>
+          <div className={`navigate  navigate_burger ${menuActive ? '  navigate__open' : ''} `}>
             <div className='blur' />
             <NavLink to='/' className={setActive}>
               Главная
@@ -24,23 +24,24 @@ function Navigation() {
             <NavLink to='/saved-movies' className={setActive}>
               Сохранённые фильмы
             </NavLink>
-            <Link to='/profile' className='navigate__profile button'>
+            <Link to='/profile' className='navigate__profile app__button'>
               Аккаунт
             </Link>
           </div>
-          <div
+          <button
+            type='button'
             className={menuActive ? 'burger burger__active' : 'burger'}
             onClick={() => setMenuActive(!menuActive)}
           >
             <span className='burger__button' />
-          </div>
+          </button>
         </>
       ) : (
         <div className='navigate'>
-          <NavLink to='/signup' className='navigate__sign-up link'>
+          <NavLink to='/signup' className='navigate__sign-up app__link'>
             Регистрация
           </NavLink>
-          <NavLink to='/signin' className='navigate__sign-in link'>
+          <NavLink to='/signin' className='navigate__sign-in app__link'>
             Войти
           </NavLink>
         </div>

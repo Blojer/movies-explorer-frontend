@@ -5,6 +5,7 @@
   border-bottom: 1px solid #424242;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .checkbox__item {
@@ -66,7 +67,7 @@
 
 @media (max-width: 320px) {
   .checkbox {
-    padding: 44px 0 41px;
+    padding: 47px 0 41px;
     max-width: 292px;
   }
   .checkbox__custom {

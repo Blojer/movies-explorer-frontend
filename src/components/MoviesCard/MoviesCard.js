@@ -6,20 +6,23 @@ function MoviesCard({ movie }) {
   const pageSaved = location.pathname === '/saved-movies';
 
   return (
-    <div className='movie'>
+    <li className='movie'>
       <img src={movie.image} alt={movie.nameRU} className='movie__image' />
       <div className='movie__info'>
-        <h3 className='movie__name'>{movie.nameRU}</h3>
+        <h2 className='movie__name'>{movie.nameRU}</h2>
         <p className='movie__time'>1ч 17м</p>
       </div>
       <button
+        type='button'
         className={`movie__button ${
-          movie.saved ? 'movie__button_type_saved button' : 'movie__button_type_save button'
-        } ${movie.saved && pageSaved ? 'movie__button_type_delete button' : ''}`}
+          movie.saved
+            ? 'movie__button_type_saved app__button'
+            : 'movie__button_type_save app__button'
+        } ${movie.saved && pageSaved ? 'movie__button_type_delete app__button' : ''}`}
       >
         Сохранить
       </button>
-    </div>
+    </li>
   );
 }
 

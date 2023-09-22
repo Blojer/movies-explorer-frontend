@@ -3,7 +3,7 @@ import AuthForm from '../AuthForm/AuthForm';
 
 function Login() {
   return (
-    <div className='login'>
+    <main className='login'>
       <AuthForm
         title={'Рады видеть!'}
         buttonText={'Войти'}
@@ -11,7 +11,7 @@ function Login() {
         link={'/signup'}
         linkText={'Регистрация'}
       />
-    </div>
+    </main>
   );
 }
 

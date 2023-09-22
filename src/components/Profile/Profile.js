@@ -1,5 +1,6 @@
 import './Profile.css';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Profile() {
   const [name, setName] = React.useState('Виталий');
@@ -15,12 +16,12 @@ function Profile() {
 
   return (
     <main className='profile'>
-      <h2 className='profile__title'>Привет, {name}!</h2>
+      <h1 className='profile__title'>Привет, {name}!</h1>
       <form className='profile__form'>
         <label className='profile__label'>
           Имя
           <input
-            className='profile__input'
+            className='profile__input app__input'
             type='text'
             required
             minLength='2'
@@ -32,18 +33,20 @@ function Profile() {
         <label className='profile__label'>
           E-mail
           <input
-            className='profile__input'
+            className='profile__input  app__input'
             type='email'
             required
             value={email}
             onChange={handleChangeEmail}
           ></input>
         </label>
-        <button className='profile__button profile__button_type_edit link' type='submit'>
+        <button className='profile__button profile__button_type_edit  app__link' type='submit'>
           Редактировать
         </button>
-        <button className='profile__button profile__button_type_logout link' type='button'>
-          Выйти из аккаунта
+        <button className='profile__button profile__button_type_logout' type='button'>
+          <Link className='profile__link app__link' to='/'>
+            Выйти из аккаунта
+          </Link>
         </button>
       </form>
     </main>

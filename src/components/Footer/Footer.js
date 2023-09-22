@@ -7,8 +7,26 @@ function Footer() {
       <div className='footer__info'>
         <p className='footer__copyright'>&copy; 2023</p>
         <ul className='footer__items'>
-          <li className='footer__item'>Яндекс.Практикум</li>
-          <li className='footer__item'>Github</li>
+          <li className='footer__item'>
+            <a
+              href='https://practicum.yandex.ru/'
+              className='footer__link app__link'
+              target='_blank'
+              rel='noreferrer'
+            >
+              Яндекс.Практикум
+            </a>
+          </li>
+          <li className='footer__item'>
+            <a
+              href='https://github.com/Blojer'
+              className='footer__link app__link'
+              target='_blank'
+              rel='noreferrer'
+            >
+              Github
+            </a>
+          </li>
         </ul>
       </div>
     </footer>

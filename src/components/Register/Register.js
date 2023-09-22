@@ -3,7 +3,7 @@ import AuthForm from '../AuthForm/AuthForm';
 
 function Register({ name, handleChange }) {
   return (
-    <div className='login'>
+    <main className='register'>
       <AuthForm
         title={'Добро пожаловать!'}
         buttonText={'Зарегистрироваться'}
@@ -16,7 +16,7 @@ function Register({ name, handleChange }) {
           Имя
           <input
             type='email'
-            className='login-form__input'
+            className='login-form__input app__input'
             name='name'
             placeholder='Имя'
             required
@@ -27,7 +27,7 @@ function Register({ name, handleChange }) {
           />
         </label>
       </AuthForm>
-    </div>
+    </main>
   );
 }
 

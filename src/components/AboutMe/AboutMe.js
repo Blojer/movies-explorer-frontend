@@ -4,7 +4,7 @@ import avatar from '../../images/avatar.png';
 function AboutMe() {
   return (
     <section className='student' id='student'>
-      <h2 className='content__title'>Студент</h2>
+      <h2 className='app__title'>Студент</h2>
       <div className='student__info'>
         <div className='student__about'>
           <h3 className='student__name'>Виталий</h3>
@@ -24,7 +24,7 @@ function AboutMe() {
             GitHub
           </a>
         </div>
-        <img className='student__avatar' src={avatar} alt='avatar' />
+        <img className='student__avatar' src={avatar} alt='Фото студента' />
       </div>
     </section>
   );
