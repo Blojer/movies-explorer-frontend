@@ -1,0 +1,142 @@
+.movie {
+  max-width: 360px;
+  position: relative;
+}
+.movie__image {
+  max-height: 201px;
+  max-width: 360px;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.movie__info {
+  margin: 0 auto;
+  max-width: 331px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 14px;
+}
+
+.movie__name {
+  margin: 0;
+  max-width: 250px;
+  color: #fff;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.movie__time {
+  color: #8b8b8b;
+  text-align: center;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 10px; /* 90.909% */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 3px;
+  background: #2f2f2f;
+  width: 52px;
+  height: 18px;
+  margin: 0;
+}
+
+.movie__button {
+  border: none;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 0;
+  width: 21px;
+  height: 21px;
+}
+
+.movie__button:hover {
+  cursor: pointer;
+}
+.movie__button_type_save {
+  width: 72px;
+  height: 21px;
+  border-radius: 30px;
+  background: #313131;
+  color: #fff;
+  text-align: center;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 9px; /* 90% */
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.movie:hover .movie__button_type_save {
+  opacity: 1;
+}
+
+.movie__button_type_saved {
+  background-image: url(../../images/buttonsaved.svg);
+}
+
+.movie__button_type_delete {
+  background-image: url(../../images/buttondelete.svg);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.movie:hover .movie__button_type_delete {
+  opacity: 1;
+}
+
+@media (max-width: 850px) {
+  .movie__image {
+    max-width: 339px;
+    max-height: 190px;
+  }
+
+  .movie__info {
+    max-width: 340px;
+    padding-top: 26px;
+  }
+
+  .movie__button_type_save {
+    opacity: 1;
+  }
+
+  .movie__button_type_delete {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 400px) {
+  .movie__image {
+    max-width: 300px;
+    max-height: 168px;
+  }
+
+  .movie__info {
+    max-width: 340px;
+    padding-top: 5px;
+  }
+
+  .movie__name {
+    padding-top: 14px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .movie__time {
+    margin: 12px 0 0;
+  }
+}

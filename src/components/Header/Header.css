@@ -1,0 +1,17 @@
+.header {
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  height: 38px;
+  width: 38px;
+}
+
+@media (max-width: 400px) {
+  .header {
+    padding: 16px 4px;
+  }
+}
