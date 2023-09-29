@@ -1,4 +1,4 @@
-export const BASE_URL = 'api.kinoblojer.nomoredomainsicu.ru';
+export const BASE_URL = 'https://api.kinoblojer.nomoredomainsicu.ru';
 export const MOVIES_URL = 'https://api.nomoreparties.co/';
 
 export const DESKTOP_ROW_CARD_COUNT = 3;
