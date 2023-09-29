@@ -1,13 +1,11 @@
 import './Navigation.css';
-import { NavLink, Link, useLocation } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import React from 'react';
 
-function Navigation() {
-  const location = useLocation();
+function Navigation({ isLoggedIn }) {
   const setActive = ({ isActive }) =>
     isActive ? 'navigate__movies navigate__movies_type_active' : 'navigate__movies app__link';
 
-  const isLoggedIn = location.pathname !== '/';
   const [menuActive, setMenuActive] = React.useState(false);
   return (
     <nav>

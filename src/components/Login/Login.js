@@ -1,7 +1,7 @@
 import './Login.css';
 import AuthForm from '../AuthForm/AuthForm';
 
-function Login() {
+function Login({ onLogin, errorMassage }) {
   return (
     <main className='login'>
       <AuthForm
@@ -10,6 +10,8 @@ function Login() {
         text={'Ещё не зарегистрированы?'}
         link={'/signup'}
         linkText={'Регистрация'}
+        submitForm={onLogin}
+        errorMassage={errorMassage}
       />
     </main>
   );

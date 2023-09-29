@@ -35,7 +35,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-bottom: 20px;
 }
 
 .login-form__label:last-of-type {
@@ -56,7 +55,23 @@
   line-height: normal;
   padding: 0 15px;
 }
+.login-form__error {
+  color: #ee3465;
+  min-height: 15px;
+  padding-top: 5px;
+}
 
+.login-form__error-message {
+  margin: 0;
+}
+
+.login-form__error-message_type_server {
+  color: #ee3465;
+  text-align: center;
+  font-size: 13px;
+  font-style: normal;
+  min-height: 15px;
+}
 .login-form__button {
   margin-top: 179px;
   border-radius: 3px;
@@ -71,6 +86,10 @@
   line-height: normal;
 }
 
+.login-form__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .login-form__button_type_register {
   margin-top: 90px;
 }

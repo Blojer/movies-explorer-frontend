@@ -18,6 +18,7 @@
 }
 .app__link:hover {
   opacity: 0.7;
+  cursor: pointer;
 }
 
 .app__input {
