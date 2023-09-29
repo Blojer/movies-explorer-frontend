@@ -16,15 +16,13 @@ function AuthForm({
   const {
     register,
     formState: { errors, isValid },
-    handleSubmit,
-    reset
+    handleSubmit
   } = useForm({
     mode: 'onChange'
   });
 
   function onSubmit(data) {
     submitForm(data);
-    reset();
   }
 
   return (

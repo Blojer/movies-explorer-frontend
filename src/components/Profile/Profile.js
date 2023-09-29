@@ -1,8 +1,10 @@
 import './Profile.css';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-function Profile({ userInfo, handleLogout, handleUpdateUserData, message }) {
+function Profile({ handleLogout, handleUpdateUserData, message }) {
   const {
     register,
     formState: { errors, isValid },
@@ -13,9 +15,11 @@ function Profile({ userInfo, handleLogout, handleUpdateUserData, message }) {
     mode: 'onChange'
   });
 
+  const currentUser = React.useContext(CurrentUserContext);
+
   React.useEffect(() => {
-    setValue('name', userInfo.name);
-    setValue('email', userInfo.email);
+    setValue('name', currentUser.name);
+    setValue('email', currentUser.email);
     // eslint-disable-next-line
   }, []);
 
@@ -24,11 +28,11 @@ function Profile({ userInfo, handleLogout, handleUpdateUserData, message }) {
   }
 
   const buttonOn =
-    isValid && (watch('name') !== userInfo.name || watch('email') !== userInfo.email);
+    isValid && (watch('name') !== currentUser.name || watch('email') !== currentUser.email);
 
   return (
     <main className='profile'>
-      <h1 className='profile__title'>Привет, {userInfo.name}!</h1>
+      <h1 className='profile__title'>Привет, {currentUser.name}!</h1>
       <form className='profile__form' onSubmit={handleSubmit(onSubmit)}>
         <label className='profile__label'>
           Имя

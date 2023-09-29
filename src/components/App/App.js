@@ -19,7 +19,9 @@ function App() {
   const navigate = useNavigate();
 
   const [currentUser, setCurrentUser] = React.useState({});
-  const [isLoggedIn, setIsLoggedIn] = React.useState(localStorage.getItem('isUserLogin') || false);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(
+    JSON.stringify(localStorage.getItem('isUserLogin')) || false
+  );
   const [savedMovies, setSavedMovies] = React.useState([]);
   const [message, setMessage] = React.useState('');
 
@@ -37,12 +39,11 @@ function App() {
           if (!data) {
             return;
           }
-          setIsLoggedIn(true);
           setCurrentUser(data);
+          setIsLoggedIn(true);
           navigate(JSON.parse(window.sessionStorage.getItem('lastRoute') || '{}'));
         })
         .catch(err => {
-          setCurrentUser(null);
           setIsLoggedIn(false);
         });
     }
@@ -51,7 +52,7 @@ function App() {
   React.useEffect(() => {
     checkToken();
     // eslint-disable-next-line
-  }, [isLoggedIn]);
+  }, []);
 
   React.useEffect(() => {
     if (isLoggedIn) {
@@ -62,7 +63,8 @@ function App() {
         })
         .catch(err => console.log(err));
     }
-  }, [isLoggedIn]);
+    // eslint-disable-next-line
+  }, []);
 
   function handleRegister(data) {
     api
@@ -93,9 +95,13 @@ function App() {
         navigate('/movies', { replace: true });
       })
       .catch(err => {
+        console.log(err);
         if (err.status === 401) {
-          setMessage('При авторизации произошла ошибка. Вы ввели неправильный логин или пароль. ');
+          return setMessage(
+            'При авторизации произошла ошибка. Вы ввели неправильный логин или пароль. '
+          );
         }
+        setMessage('На сервере произошла ошибка.');
       });
   }
 
@@ -108,7 +114,6 @@ function App() {
         localStorage.removeItem('searchString');
         localStorage.removeItem('isShort');
         localStorage.removeItem('isUserLogin');
-
         setIsLoggedIn(false);
         navigate('/', { replace: true });
       })
@@ -200,7 +205,6 @@ function App() {
                 <ProtectedRoute
                   element={Profile}
                   isLoggedIn={isLoggedIn}
-                  userInfo={currentUser}
                   handleLogout={handleLogout}
                   handleUpdateUserData={handleUpdateUserData}
                   message={message}
