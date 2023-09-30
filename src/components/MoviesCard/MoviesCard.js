@@ -11,7 +11,6 @@ function MoviesCard({ movie, handleSaveMovie, Delete, savedMovies }) {
   };
 
   const handelClickDeleteButton = () => {
-    // handleDeleteMovie();
     Delete(movie);
   };
 
