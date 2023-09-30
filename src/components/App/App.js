@@ -25,34 +25,25 @@ function App() {
   const [savedMovies, setSavedMovies] = React.useState([]);
   const [message, setMessage] = React.useState('');
 
-  React.useEffect(() => {
-    window.onbeforeunload = () => {
-      window.sessionStorage.setItem('lastRoute', JSON.stringify(window.location.pathname));
-    };
-  }, []);
-
   const checkToken = () => {
-    if (isLoggedIn) {
-      api
-        .getUserData()
-        .then(data => {
-          if (!data) {
-            return;
-          }
-          setCurrentUser(data);
-          setIsLoggedIn(true);
-          navigate(JSON.parse(window.sessionStorage.getItem('lastRoute') || '{}'));
-        })
-        .catch(err => {
-          setIsLoggedIn(false);
-        });
-    }
+    api
+      .getUserData()
+      .then(data => {
+        if (!data) {
+          return;
+        }
+        setCurrentUser(data);
+        setIsLoggedIn(true);
+      })
+      .catch(err => {
+        setIsLoggedIn(false);
+      });
   };
 
   React.useEffect(() => {
     checkToken();
     // eslint-disable-next-line
-  }, []);
+  }, [isLoggedIn]);
 
   React.useEffect(() => {
     if (isLoggedIn) {
@@ -64,7 +55,7 @@ function App() {
         .catch(err => console.log(err));
     }
     // eslint-disable-next-line
-  }, []);
+  }, [isLoggedIn]);
 
   function handleRegister(data) {
     api

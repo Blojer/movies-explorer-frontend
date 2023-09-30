@@ -16,7 +16,7 @@ function Profile({ handleLogout, handleUpdateUserData, message }) {
   });
 
   const currentUser = React.useContext(CurrentUserContext);
-
+  console.log(currentUser);
   React.useEffect(() => {
     setValue('name', currentUser.name);
     setValue('email', currentUser.email);
