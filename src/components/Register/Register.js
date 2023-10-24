@@ -1,7 +1,7 @@
 import './Register.css';
 import AuthForm from '../AuthForm/AuthForm';
 
-function Register({ name, handleChange }) {
+function Register({ onRegister, errorMassage }) {
   return (
     <main className='register'>
       <AuthForm
@@ -10,23 +10,10 @@ function Register({ name, handleChange }) {
         text={'Уже зарегистрированы?'}
         link={'/signin'}
         linkText={'Войти'}
-        register={true}
-      >
-        <label className='login-form__label'>
-          Имя
-          <input
-            type='email'
-            className='login-form__input app__input'
-            name='name'
-            placeholder='Имя'
-            required
-            minLength='2'
-            maxLength='40'
-            value={name}
-            onChange={handleChange}
-          />
-        </label>
-      </AuthForm>
+        registerForm={true}
+        submitForm={onRegister}
+        errorMassage={errorMassage}
+      />
     </main>
   );
 }

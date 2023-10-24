@@ -1,6 +1,7 @@
 .movie {
   max-width: 360px;
   position: relative;
+  width: 100%;
 }
 .movie__image {
   max-height: 201px;
